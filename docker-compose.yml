@@ -1,0 +1,20 @@
+# https://hub.docker.com/_/mysql
+
+version: "3.8"                                            # docker-compose 파일 버전
+services:                                                 # 서비스들을 선언
+  mysql:                                                  # 서비스명을 선언
+    container_name: mysql_local
+    image: mysql:8.0.30
+    env_file:
+      - .env
+    volumes:                                              # {호스트}:{컨테이너}
+      - ${MYSQL_CUSTOM_CONFIG_PATH}:/etc/mysql/conf.d     # MySQL 설정 파일
+      - ${MYSQL_DATA_PATH}:/docker-entrypoint-initdb.d    # sh, sql을 파일명 알파벳순으로 수행(테이블 create, insert 쿼리 파일)
+    ports:                                                # 외부로 노출시킬 port
+      - ${MYSQL_BINDING_PORT}:${MYSQL_PORT}
+    environment:                                          # 환경 변수
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - TZ=${TZ}
