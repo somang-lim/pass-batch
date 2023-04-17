@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:hope
+    username: imhope
+    password: 0987
+    driver-class-name: org.h2.Driver
