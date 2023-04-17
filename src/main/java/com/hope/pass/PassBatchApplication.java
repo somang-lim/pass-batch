@@ -2,7 +2,6 @@ package com.hope.pass;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
-import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.repeat.RepeatStatus;
@@ -13,7 +12,6 @@ import org.springframework.context.annotation.Bean;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-@EnableBatchProcessing
 @SpringBootApplication
 public class PassBatchApplication {
 
