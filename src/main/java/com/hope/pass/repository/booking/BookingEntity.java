@@ -18,6 +18,7 @@ import com.hope.pass.repository.pass.PassEntity;
 import com.hope.pass.repository.user.UserEntity;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @Getter
@@ -38,6 +39,7 @@ public class BookingEntity extends BaseEntity {
 	@Enumerated(EnumType.STRING)
 	private BookingStatus status;
 
+	@Setter
 	private boolean usedPass;
 
 	private boolean attended;
@@ -53,6 +55,7 @@ public class BookingEntity extends BaseEntity {
 	@JoinColumn(name = "userId", insertable = false, updatable = false)
 	private UserEntity userEntity;
 
+	@Setter
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "passSeq", insertable = false, updatable = false)
 	private PassEntity passEntity;
