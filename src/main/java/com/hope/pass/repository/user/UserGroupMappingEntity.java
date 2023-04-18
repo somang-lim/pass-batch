@@ -8,6 +8,7 @@ import javax.persistence.Table;
 import com.hope.pass.repository.BaseEntity;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @Getter
@@ -17,9 +18,11 @@ import lombok.ToString;
 @Table(name = "user_group_mapping")
 public class UserGroupMappingEntity extends BaseEntity {
 
+	@Setter
 	@Id
 	private String userGroupId;
 
+	@Setter
 	@Id
 	private String userId;
 

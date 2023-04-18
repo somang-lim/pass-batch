@@ -13,6 +13,7 @@ import javax.persistence.Table;
 import com.hope.pass.repository.BaseEntity;
 
 import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 @Getter
@@ -25,19 +26,25 @@ public class BulkPassEntity extends BaseEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer bulkPassSeq;
 
+	@Setter
 	private Integer packageSeq;
 
+	@Setter
 	private String userGroupId;
 
 
+	@Setter
 	@Enumerated(EnumType.STRING)
 	private BulkPassStatus status;
 
+	@Setter
 	private Integer count;
 
 
+	@Setter
 	private LocalDateTime startedAt;
 
+	@Setter
 	private LocalDateTime endedAt;
 
 }
