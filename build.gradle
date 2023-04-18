@@ -39,6 +39,9 @@ dependencies {
 	// hibernate-types
 	implementation 'com.vladmihalcea:hibernate-types-52:2.19.2'
 
+	// csv
+	implementation 'com.opencsv:opencsv:5.7.0'
+
 
 	// ##### test #####
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
