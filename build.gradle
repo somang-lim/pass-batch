@@ -21,14 +21,21 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-batch'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
 	// mysql
 	runtimeOnly 'com.mysql:mysql-connector-j'
+
 	// lombok
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
 	// mapstruct
 	implementation 'org.mapstruct:mapstruct:1.5.2.Final'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+
+	// hibernate-types
+	implementation 'com.vladmihalcea:hibernate-types-52:2.19.2'
+
 
 	// ##### test #####
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
